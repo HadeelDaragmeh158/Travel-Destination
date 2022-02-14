@@ -1,24 +1,25 @@
 import '../../App.css';
-
+import Tour from './tour/Tour';
+import data from '../../Data/data.json';
+import { Link } from "react-router-dom";
 
 function Tours(props) {
+
     return (
         <>
-            {props.data.map(city => {
-                return (<div className='row'>
-                    <br/>
-                   <br/>
-                   <div className='column'>
-                    <h3 className="">City : {city.name}</h3>
-                    <img className="App-logo" src={city.image} alt ={city.name}></img>
-                    </div>
-                   <br/>
-                   <br/>
-                </div>); 
-            })}
-        </>
-    );
+            {
+                props.cityinf.map((city, idx) => {
+                    return (
+                        <div key={idx}>
+                            <Link to={`/city/${city.id}`}>
+                                <Tour cityinf={city} citykey={idx} />
+                            </Link>
+                        </div>
+                    );
+                }
+                )}
 
+        </>);
 }
 
 export default Tours;
