@@ -1,8 +1,8 @@
 import './App.css';
-import data from './data.json';
-import Tours from './components/Tours';
-import Header from './components/Header';
-import Home from './components/Home';
+import data from './Data/data.json';
+import Tours from './components/tours/Tours';
+import Header from './components/header/Header';
+import Home from './components/home/Home';
 function App() {
   return (
   <> 
